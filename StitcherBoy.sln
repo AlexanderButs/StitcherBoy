@@ -5,14 +5,14 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A1A144C2-51D5-4893-9163-B5B1E19C69D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "Tests\TestApplication\TestApplication.csproj", "{8FDA90E8-CA65-465F-B81C-E60054C2C528}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApplication", "Tests\TestApplication\TestApplication.csproj", "{8FDA90E8-CA65-465F-B81C-E60054C2C528}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringsRetoucher", "Tests\StringsRetoucher\StringsRetoucher.csproj", "{5AB1C5D0-3F22-4504-8C97-14831DB7ED89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringsRetoucher", "Tests\StringsRetoucher\StringsRetoucher.csproj", "{5AB1C5D0-3F22-4504-8C97-14831DB7ED89}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8FDA90E8-CA65-465F-B81C-E60054C2C528} = {8FDA90E8-CA65-465F-B81C-E60054C2C528}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StitcherBoy", "StitcherBoy\StitcherBoy.csproj", "{8515A314-3563-465A-8303-FE26E04CFB13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StitcherBoy", "StitcherBoy\StitcherBoy.csproj", "{8515A314-3563-465A-8303-FE26E04CFB13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Icon", "Icon", "{C190A320-9603-46F8-B09F-972CB9D08930}"
 	ProjectSection(SolutionItems) = preProject
@@ -31,9 +31,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferencedLibrary2", "Refer
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{AE158CE4-5670-4D26-B7DE-0BB768DD8B85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnlib", "dnlib\src\dnlib.csproj", "{FDFC1237-143F-4919-8318-4926901F4639}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnlib", "dnlib\src\dnlib.csproj", "{FDFC1237-143F-4919-8318-4926901F4639}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StitcherBoyTests", "Tests\StitcherBoyTests\StitcherBoyTests.csproj", "{E917B523-BBD5-462D-8289-25E76AAD4755}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StitcherBoyTests", "Tests\StitcherBoyTests\StitcherBoyTests.csproj", "{E917B523-BBD5-462D-8289-25E76AAD4755}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ECA9B346-59B0-41AA-8680-EAE9896493A7}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,5 +81,8 @@ Global
 		{3E753F64-B1D4-43B8-ADE9-CF21DAA92C37} = {A1A144C2-51D5-4893-9163-B5B1E19C69D6}
 		{FDFC1237-143F-4919-8318-4926901F4639} = {AE158CE4-5670-4D26-B7DE-0BB768DD8B85}
 		{E917B523-BBD5-462D-8289-25E76AAD4755} = {A1A144C2-51D5-4893-9163-B5B1E19C69D6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA05887D-1F07-45E8-9A1D-A0870FEE1E8A}
 	EndGlobalSection
 EndGlobal

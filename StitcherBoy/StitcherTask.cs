@@ -120,8 +120,8 @@ public abstract class StitcherTask<TSingleStitcher> : ApplicationTask<StitcherTa
             var thisAssemblyBytes = File.ReadAllBytes(assemblyPath);
             using (var taskAppDomain = new DisposableAppDomain("StitcherBoy", assemblyDirectory))
             {
-                var sticherProcessor = taskAppDomain.AppDomain.CreateInstanceAndUnwrap<StitcherProcessor>();
-                taskAppDomain.AppDomain.Load(thisAssemblyBytes);
+                var sticherProcessor = taskAppDomain.CreateInstanceAndUnwrap<StitcherProcessor>();
+                taskAppDomain.Load(thisAssemblyBytes);
                 sticherProcessor.Logging = new RemoteLogging(Logging);
                 sticherProcessor.Load(type.FullName);
                 return sticherProcessor.Process(parameters, BuildID, BuildTime, GetType().Assembly.Location);

@@ -11,6 +11,7 @@ namespace StitcherBoy.Utility
     /// </summary>
     internal static class AppDomainExtensions
     {
+#if NET461
         public static TInstance CreateInstanceAndUnwrap<TInstance>(this AppDomain appDomain)
             where TInstance : MarshalByRefObject
         {
@@ -27,5 +28,6 @@ namespace StitcherBoy.Utility
                 Directory.SetCurrentDirectory(cwd);
             }
         }
+#endif
     }
 }

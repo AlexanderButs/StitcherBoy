@@ -1,0 +1,5 @@
+﻿<Project>
+  <PropertyGroup>
+    <NoTargetFrameworkNet35>true</NoTargetFrameworkNet35>
+  </PropertyGroup>
+</Project>
