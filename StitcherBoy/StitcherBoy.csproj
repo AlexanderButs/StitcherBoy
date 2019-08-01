@@ -18,14 +18,12 @@
     <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/picrap/StitcherBoy</PackageProjectUrl>
     <PackageTags>tasks</PackageTags>
-    <PostBuildEvent>if not "$(ConfigurationName)" == "Release" goto cassos
 
-rem /keyfile:"$(ProjectDir)Properties\StitcherBoy.snk" 
-echo Running ILMerge
-"$(ProjectDir)..\Libraries\ilmerge.exe" /keyfile:"$(ProjectDir)Properties\StitcherBoy.snk" /out:"$(TargetPath)" "$(ProjectDir)obj\$(ConfigurationName)\$(TargetFileName)" "$(TargetDir)dnlib.dll" /ndebug
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Properties\StitcherBoy.snk</AssemblyOriginatorKeyFile>
 
-:cassos
-</PostBuildEvent>
+    <StartupObject />
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -33,30 +31,10 @@ echo Running ILMerge
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Properties\StitcherBoy.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>if not "$(ConfigurationName)" == "Release" goto cassos
-
-rem /keyfile:"$(ProjectDir)Properties\StitcherBoy.snk" 
-echo Running ILMerge
-"$(ProjectDir)..\Libraries\ilmerge.exe" /keyfile:"$(ProjectDir)Properties\StitcherBoy.snk" /out:"$(TargetPath)" "$(ProjectDir)obj\$(ConfigurationName)\$(TargetFileName)" "$(TargetDir)dnlib.dll" /ndebug
-
-:cassos
-</PostBuildEvent>
-  </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="Microsoft.Build" Version="15.9.20" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Build.Framework" Version="15.9.20" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="15.9.20" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.9.20" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build" Version="15.9.20" />
+    <PackageReference Include="Microsoft.Build.Framework" Version="15.9.20" />
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="15.9.20" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
     <Reference Include="Microsoft.Build" />
@@ -69,4 +47,7 @@ echo Running ILMerge
   <ItemGroup>
     <ProjectReference Include="..\dnlib\src\dnlib.csproj" />
   </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if not &quot;$(ConfigurationName)&quot; == &quot;Release&quot; goto cassos&#xD;&#xA;&#xD;&#xA;rem /keyfile:&quot;$(ProjectDir)Properties\StitcherBoy.snk&quot; &#xD;&#xA;echo Running ILMerge&#xD;&#xA;&quot;$(ProjectDir)..\Libraries\ilmerge.exe&quot; /lib:&quot;$(ProjectDir)bin\$(ConfigurationName)\$(TargetFramework)&quot; /keyfile:&quot;$(ProjectDir)Properties\StitcherBoy.snk&quot; /out:&quot;$(TargetPath)&quot; &quot;$(ProjectDir)obj\$(ConfigurationName)\$(TargetFramework)\$(TargetFileName)&quot; &quot;$(TargetDir)dnlib.dll&quot; /ndebug&#xD;&#xA;&#xD;&#xA;:cassos" />
+  </Target>
 </Project>
