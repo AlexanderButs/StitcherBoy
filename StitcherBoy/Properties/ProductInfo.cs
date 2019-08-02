@@ -4,6 +4,5 @@
 
 using System.Reflection;
 
-[assembly: AssemblyDescription("Classes for post-build tasks, to modify assemblies after generation (using dnlib). Allows to run from command-line or build task.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
