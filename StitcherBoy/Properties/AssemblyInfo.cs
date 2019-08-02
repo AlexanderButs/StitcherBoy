@@ -5,5 +5,7 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
+[assembly: AssemblyTitle("StitcherBoy")]
+
 [assembly: ComVisible(false)]
 

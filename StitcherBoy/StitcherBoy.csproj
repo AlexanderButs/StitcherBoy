@@ -5,13 +5,7 @@
     <DefineConstants Condition="'$(TargetFramework)' == 'net461'">$(DefineConstants);NET461</DefineConstants>
     <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD2_0</DefineConstants>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <AssemblyTitle>StitcherBoy</AssemblyTitle>
-    <AssemblyProduct>StitcherBoy</AssemblyProduct>
-    <AssemblyCopyright>MIT License http://opensource.org/licenses/MIT</AssemblyCopyright>
-		<AssemblyCompany>openstore.craponne.fr</AssemblyCompany>
-	  <AssemblyVersion>1.3</AssemblyVersion>
-		<AssemblyDescription>Classes for post-build tasks, to modify assemblies after generation (using dnlib). Allows to run from command-line or build task.</AssemblyDescription>
-		<Copyright>Pascal Craponne</Copyright>
+    <Copyright>Pascal Craponne</Copyright>
     <DocumentationFile>bin\$(Configuration)\StitcherBoy.XML</DocumentationFile>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <PackageIconUrl>https://raw.githubusercontent.com/picrap/StitcherBoy/master/Icon/StitcherBoy.png</PackageIconUrl>
@@ -25,6 +19,8 @@
 
     <StartupObject />
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
