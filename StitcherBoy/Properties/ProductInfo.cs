@@ -10,5 +10,3 @@ using System.Reflection;
 [assembly: AssemblyCopyright("MIT License http://opensource.org/licenses/MIT")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
-[assembly: AssemblyVersion("1.3")]
